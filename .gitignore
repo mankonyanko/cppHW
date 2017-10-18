@@ -39,3 +39,4 @@
 *.vcxproj
 *.db
 *.ilk
+*.opendb
