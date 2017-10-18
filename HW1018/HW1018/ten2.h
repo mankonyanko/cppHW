@@ -12,10 +12,19 @@ public:
 	{
 		cout << '[' << xpos << ", " << ypos << ']' << endl;
 	}
-	Point& operator++()
+	Point& operator- ()
 	{
-		xpos++;
-		ypos++;
+		this->xpos = -(this->xpos);
+		this->ypos = -(this->ypos);
 		return *this;
 	}
+
+	friend Point& operator~(Point& ref);
 };
+
+Point& operator~(Point& ref)
+{
+	ref.xpos = ~(ref.xpos);
+	ref.ypos = ~(ref.ypos);
+	return ref;
+}
